@@ -2,6 +2,7 @@
 
  a Rhinoceros script that create buildings according to geojson file and with real elevation by Guillaume Meunier
  
+ <img src="https://alliages.files.wordpress.com/2016/06/city-in-3d_a.jpg" style="width: 400px;"/>
  -----------------------------------
  Need pygeoj.py & utm.py
  It must be in your script's folder
