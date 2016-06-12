@@ -1,4 +1,4 @@
-# City-in-3D
+# City in 3D
 
 a Rhinoceros script that create buildings according to geojson file and with real elevation by Guillaume Meunier
  
