@@ -9,7 +9,7 @@ How to create a city like Paris in 3D?
 First you can get open data from the wonderful Apur (http://www.apur.org) that use the ODbL licence (Open Database License)
 http://cassini.apur.opendata.arcgis.com/datasets/0eede2e679394258976b57745ba17fd7_0
 
-then thanks to Qgis (http://www.qgis.org) you can convert the file in GEOJSON (http://geojson.org/)
+then thanks to Qgis (http://www.qgis.org) you can convert the file in GEOJSON (http://geojson.org/). Find the file on my google drive : https://drive.google.com/file/d/0B6eiQ1YkktWOTEhiVV9iVktzQ0U/view
 
 So now you can extrude and have a 3D file.
 
