@@ -9,7 +9,10 @@ How to create a city like Paris in 3D?
 First you can get open data from the wonderful Apur (http://www.apur.org) that use the ODbL licence (Open Database License)
 http://cassini.apur.opendata.arcgis.com/datasets/0eede2e679394258976b57745ba17fd7_0
 
-then thanks to Qgis (http://www.qgis.org) you can convert the file in GEOJSON (http://geojson.org/). Find the file on my google drive : https://drive.google.com/file/d/0B6eiQ1YkktWOTEhiVV9iVktzQ0U/view
+then thanks to Qgis (http://www.qgis.org) you can convert the file in GEOJSON (http://geojson.org/). 
+
+Find the file on my google drive : https://drive.google.com/file/d/0B6eiQ1YkktWOTEhiVV9iVktzQ0U/view
+<img src="https://alliages.files.wordpress.com/2016/06/paris.jpg" width="150"/>
 
 So now you can extrude and have a 3D file.
 
@@ -60,3 +63,6 @@ version 1.0 initial release
     Returns:
         3D Model with elevation
         Each object with it's name corresponding to database
+----
+elevation example :
+<img src="https://alliages.files.wordpress.com/2016/06/city-in-3d_b.jpg" width="300"/>
