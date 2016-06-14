@@ -113,11 +113,9 @@ def latlong_to_coord(lat,lon):
     ptzero_france_north = 5411363.8212742545
     
     if not -80.0 <= lat <= 84.0:
-        print lat
-        lat=48.8
+        print "Lat not in -80 and +84"
     if not -180.0 <= lon <= 180.0:
-        print lon
-        lon=2.3
+        print "long not in -180 and 180"
     loc = utm.from_latlon(lat,lon)
     resX = loc[0]-ptzero_france_east
     resY = loc[1]-ptzero_france_north
@@ -426,16 +424,16 @@ rs.EnableRedraw(False)
 
 #YOUR BASE FOR EXTRUSION FILE AS GEOJSON
 #either without path if in same directory or with path
-cadastre_f = 'monexport_central.geojson'
+cadastre_f = 'D:/DATA/g.meunier/Desktop/elev/emprise_bati_paris.geojson'
 
 #YOUR ELEVATION FILE AS HDR
 # expects to also find bil file in same folder
-elevation_f = "elevationBil/elev-decoupe75.hdr"
+elevation_f = "elev-decoupe75.hdr"
 
 #IF YOU WANT A SMALL PART OF PARIS (IF YOU DON'T USE ZERO IN  radius_around
 #THE ADDRESS YOU WANT
 address_f = ""
-#address_f = "115 rue saint antoine Paris"
+address_f = "20 rue Gasnier-Guy Paris"
 
 #AND THE RADIUS AROUND THIS ADDRESS IN METER (OR ZERO)
 radius_around = 400
@@ -448,14 +446,12 @@ v = elevation_file.values
 
 #test if radius_around>0 or exist
 if radius_around:
-    #print "yes radius"
     if address_f:
         address_coord_lat,address_coord_lon = nominatim(address_f)
         extrude(extrude_json, h, v, radius_around, address_coord_lat, address_coord_lon)
     else:
         print "need an address or no radius"
 else:
-    print "else"
     extrude(extrude_json, h, v)
 
 #COULD USE MULTITHREADING :

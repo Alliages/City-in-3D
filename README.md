@@ -11,8 +11,8 @@ http://cassini.apur.opendata.arcgis.com/datasets/0eede2e679394258976b57745ba17fd
 
 then thanks to Qgis (http://www.qgis.org) you can convert the file in GEOJSON (http://geojson.org/). 
 
-Find the file on my google drive : https://drive.google.com/file/d/0B6eiQ1YkktWOTEhiVV9iVktzQ0U/view
-<img src="https://alliages.files.wordpress.com/2016/06/paris.jpg" width="150"/>
+Find the right file on pcloud : http://pc.cd/niwctalK
+<img src="https://alliages.files.wordpress.com/2016/06/paris.jpg" width="150"/><img src="https://alliages.files.wordpress.com/2016/06/emprise_bati_haut-de-seine-92.png" width="150"/>...
 
 So now you can extrude and have a 3D file.
 
