@@ -28,7 +28,8 @@
 
 """
 #######
-version 1.0 initial release
+version 1.1 bugfix in approximation 2016/06/16
+version 1.0 initial release 2016/06/12
 -
     Args:
         Geojson file
@@ -37,7 +38,7 @@ version 1.0 initial release
         address you around which you want to create city
     Returns:
         out: various information
-        coordiantes: coordinates in JSON format
+        coordinates: coordinates in JSON format
         properties: properties in JSON format
 """
 from System import Object
@@ -291,39 +292,42 @@ def approx_elevation(h,v,lat,lon):
         raise Exception(err)
     el_c = v[row][column]
     lat_t,long_t = get_lat_and_long(h,row,column)
-    dis_c = distance(lat,lon,lat_t,long_t)
+	dis_c = distance(lat,lon,lat_t,long_t)
+    if dis_c == 0:
+	    return el_c #case perfectly at center
+    dis_c = 1/dis_c
     ##
     el_n = v[row-1][column]
     lat_t,long_t = get_lat_and_long(h,row-1,column)
-    dis_n = distance(lat,lon,lat_t,long_t)
+    dis_n = 1/distance(lat,lon,lat_t,long_t)
     ##
     el_s = v[row+1][column]
     lat_t,long_t = get_lat_and_long(h,row+1,column)
-    dis_s = distance(lat,lon,lat_t,long_t)
+    dis_s = 1/distance(lat,lon,lat_t,long_t)
     ##
     el_e = v[row][column+1]
     lat_t,long_t = get_lat_and_long(h,row,column+1)
-    dis_e = distance(lat,lon,lat_t,long_t)
+    dis_e = 1/distance(lat,lon,lat_t,long_t)
     ##
     el_o = v[row][column-1]
     lat_t,long_t = get_lat_and_long(h,row,column-1)
-    dis_o = distance(lat,lon,lat_t,long_t)
+    dis_o = 1/distance(lat,lon,lat_t,long_t)
     ##
     el_ne = v[row-1][column+1]
     lat_t,long_t = get_lat_and_long(h,row-1,column+1)
-    dis_ne = distance(lat,lon,lat_t,long_t)
+    dis_ne = 1/distance(lat,lon,lat_t,long_t)
     ##
     el_se = v[row+1][column+1]
     lat_t,long_t = get_lat_and_long(h,row+1,column+1)
-    dis_se = distance(lat,lon,lat_t,long_t)
+    dis_se = 1/distance(lat,lon,lat_t,long_t)
     ##
     el_so = v[row+1][column-1]
     lat_t,long_t = get_lat_and_long(h,row+1,column-1)
-    dis_so = distance(lat,lon,lat_t,long_t)
+    dis_so = 1/distance(lat,lon,lat_t,long_t)
     ##
     el_no = v[row-1][column-1]
     lat_t,long_t = get_lat_and_long(h,row-1,column-1)
-    dis_no = distance(lat,lon,lat_t,long_t)
+    dis_no = 1/distance(lat,lon,lat_t,long_t)
     ##
     r = (el_c*dis_c+el_n*dis_n+el_s*dis_s+el_e*dis_e+el_o*dis_o+el_no*dis_no+el_ne*dis_ne+el_so*dis_so+el_se*dis_se)/(dis_c+dis_n+dis_s+dis_e+dis_o+dis_no+dis_ne+dis_so+dis_se)
     return r
